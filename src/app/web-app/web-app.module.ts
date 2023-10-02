@@ -1,20 +1,18 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { WebAppRoutingModule } from "./web-app-routing.module";
-import { CommonModule } from "@angular/common";
-import { HeaderComponent } from './header/header.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { WebAppRoutingModule } from './web-app-routing.module';
+import { HeaderModule } from './header/header.module';
+import { WebAppComponent } from './web-app.component';
+import { FooterModule } from './footer/footer.module';
+
 @NgModule({
-  declarations: [
-    HeaderComponent
-  ],
-  exports:[HeaderComponent],
+  declarations: [WebAppComponent],
   imports: [
     CommonModule,
     WebAppRoutingModule,
+    HeaderModule,
+    FooterModule
   ],
-  providers: [],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
+  exports: [WebAppComponent]
 })
-
-export class WebAppModlue { };
+export class WebAppModule { }
